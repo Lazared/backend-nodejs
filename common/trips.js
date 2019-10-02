@@ -188,7 +188,7 @@ function updateAllTrips() {
       // update all trips in mongoDB
       var tripCollection = require("../models/trip.model");
 
-      trips.forEach(trip => {
+      /*trips.forEach(trip => {
         let upsertDoc = {
           updateOne: {
             filter: { trip_id: trip["trip_id"] },
@@ -198,7 +198,7 @@ function updateAllTrips() {
           }
         };
         bulkOps.push(upsertDoc);
-      });
+      });*/
 
       if (bulkOps.length > 0) {
         tripCollection.bulkWrite(bulkOps);
